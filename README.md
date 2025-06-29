@@ -7,8 +7,6 @@ a known voltage.
 
 ## Example Usage
 
----
-
 ```java
 // Construct graph of circuit
 Node batteryPositive = new Node(),
