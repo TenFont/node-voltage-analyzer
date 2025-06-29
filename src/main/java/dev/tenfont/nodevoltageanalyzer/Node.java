@@ -34,16 +34,8 @@ public class Node {
         node.addSuperConnection(new SuperConnection(this, -voltageRaise));
     }
 
-    public Set<NodeConnection> getDirectConnections() {
-        return new HashSet<>(connections);
-    }
-
     public Set<NodeConnection> getConnections() {
-        Set<NodeConnection> result = getDirectConnections();
-        if (superConnection != null) {
-            result.addAll(superConnection.connectedNode().getDirectConnections());
-        }
-        return result;
+        return new HashSet<>(connections);
     }
 
     public @Nullable SuperConnection getSuperConnection() {

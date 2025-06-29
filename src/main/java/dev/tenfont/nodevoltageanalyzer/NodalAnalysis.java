@@ -36,7 +36,7 @@ public class NodalAnalysis {
                 if (!visited.add(neighbour)) continue;
                 deque.add(neighbour);
             }
-            for (NodeConnection connection : current.getDirectConnections()) {
+            for (NodeConnection connection : current.getConnections()) {
                 Node neighbour = connection.connectedNode();
                 if (!visited.add(neighbour)) continue;
                 deque.add(neighbour);
@@ -116,7 +116,7 @@ public class NodalAnalysis {
                 equationIndex = nodeIndexMap.get(node.getSuperConnection().connectedNode());
             }
 
-            for (NodeConnection connection : node.getDirectConnections()) {
+            for (NodeConnection connection : node.getConnections()) {
                 Node connectedNode = connection.connectedNode();
 
                 double resistance = connection.resistance();
